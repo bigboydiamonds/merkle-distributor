@@ -18,3 +18,12 @@ The following assumes the use of `node@>=10`.
 ## Run Tests
 
 `yarn test`
+
+## To Deploy Merkle Distributor
+Ensure .env variables are set. 
+
+Update scripts/claimData.json for { receipient_address:claimable_token } entries.
+
+Run `yarn generate-merkle-root:claim` to generate merkle root, outputted in scripts/result.json.
+
+Run `yarn deploy-merkle-distributor:claim` to deploy the merkle distributor contract on Sepolia.
