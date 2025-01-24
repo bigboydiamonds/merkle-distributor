@@ -21,7 +21,8 @@
     "precompile": "rimraf ./build/",
     "compile": "npx hardhat compile",
     "generate-merkle-root": "ts-node scripts/generate-merkle-root.ts",
-    "generate-merkle-root:claim": "ts-node scripts/generate-merkle-root.ts --input scripts/claimData.json",
+    "generate-merkle-root:claim": "ts-node scripts/generate-merkle-root.ts --input scripts/claimData.json # outputs to scripts/result.json",
+    "deploy-merkle-distributor:claim": "npx hardhat run scripts/deployMerkleDistributor.js --network sepolia",
     "prepublishOnly": "yarn test",
     "pretest": "yarn compile",
     "test": "npx hardhat test"

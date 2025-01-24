@@ -2,11 +2,14 @@ require('dotenv').config()
 require('@nomiclabs/hardhat-ethers')
 require('@nomicfoundation/hardhat-verify')
 const { ethers, run } = require('hardhat')
+const fs = require('fs')
+const path = require('path')
 
 async function main() {
   // Claim token
   const tokenAddress = '0x2a59F49eA6e8d254A2b1B18640158A188782aDDE'
-  const merkleRoot = '0xbf5b447dbf6a7252ec277aedcf355e99a4b78feb394c7eceba3da08941f5e89f'
+  const resultPath = path.join(__dirname, 'result.json')
+  const { merkleRoot } = JSON.parse(fs.readFileSync(resultPath, 'utf8'))
 
   console.log('Deploying MerkleDistributor...')
   const MerkleDistributor = await ethers.getContractFactory('MerkleDistributor')
