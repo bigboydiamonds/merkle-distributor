@@ -7,7 +7,7 @@ const path = require('path')
 
 async function main() {
   // Claim token
-  const tokenAddress = '0x2a59F49eA6e8d254A2b1B18640158A188782aDDE'
+  const tokenAddress = '0x17D5bdEe340519E28d1AD7062D74273ece62FAFb'
   const resultPath = path.join(__dirname, 'result.json')
   const { merkleRoot } = JSON.parse(fs.readFileSync(resultPath, 'utf8'))
 
